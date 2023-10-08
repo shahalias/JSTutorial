@@ -1,0 +1,1365 @@
+-----###### Change HTML Content
+<p id="demo">JavaScript can change HTML content.</p>
+<button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello Javascript!'">
+    Click Me
+</button>
+
+-----###### Change HTML Attribute Values
+<img id="myImage" src="pic_bulb_off.gif" style="width: 100px;">
+<button type="button" onclick="document.getElementById('myImage').src='pic_bulb_on.gif'">
+    Turn on the light    
+</button>
+<button type="button" onclick="document.getElementById('myImage').src='pic_bulb_off.gif'">
+    Turn off the light    
+</button>
+
+-----###### Change HTML Styles (CSS)
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">
+    Change Size
+</button>
+
+-----###### Hide HTML Elements
+<p id="demo">JavaScript can hide HTML elements.</p>
+<button type="button" onclick="document.getElementById('demo').style.display='none'">
+    Hide Element!
+</button>
+
+-----###### Show HTML Elements
+<p id="demo" style="display:none">Hello JavaScript!</p>
+<button type="button" onclick="document.getElementById('demo').style.display='block'">
+    Show Element!
+</button>
+
+-----###### Function
+<p id="demo">A Paragraph.</p>
+<button type="button" onclick="myFunction()">Try it</button>
+<script>
+    function myFunction() 
+    {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+    }
+</script>
+<script src="myScript.js"></script> // External js file
+
+-----###### Display Possibilities / JS Output
+-Writing into an HTML element - innerHTML.
+-Writing into the HTML output - document.write().
+-Writing into an alert box - window.alert().
+-Writing into the browser console - console.log().
+-print content of the current window - windows.print()
+
+-----###### JS Variables
+declared in 4 ways
+-automatically
+-using var
+-using let
+-using const
+
+*var keyword used in JS from 1995 - 2015
+*let and const keywords were added to JS in 2015
+*var should be used in older browsers
+*JS can handle many data type
+
+-----###### JS Let
+-cant be redeclared
+-must declare first
+-have block scope
+
+-----###### JS const 
+- it defines constant reference to a value
+-a new array
+-a new object
+-a new function
+-a new RegExp
+
+#####Constant Array
+<p>Declaring a constant array does NOT make the elements unchangeable:</p>
+<p id="demo"></p>
+
+<script>
+// Create an Array:
+const cars = ["Saab", "Volvo", "BMW"];
+// Change an element:
+cars[0] = "Toyota";
+// Add an element:
+cars.push("Audi");
+// Display the Array:
+document.getElementById("demo").innerHTML = cars; 
+</script>
+
+
+#####Constant Object
+<p>Declaring a constant object does NOT make the objects properties unchangeable:</p>
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+// Change a property:
+car.color = "red";
+// Add a property:
+car.owner = "Johnson";
+// Display the property:
+document.getElementById("demo").innerHTML = "Car owner is " + car.owner; 
+</script>
+
+-----###### JS Operators
+-arithmetic (+,-,*,/,**,%,++,--)
+-assignment (=, +=, -=, *=, /*, %=, **=)
+-comparison (==, ===, !=, !==, >,<, >=, <=, ?)
+-string (<, >, +)
+-logical ( &&, ||, !)
+-bitwise (&,|, ~, ^, <<, >>, >>>)
+-ternary
+-type (typeof , instanceof)
+
+#####Arithmetic
+-exponentiation
+    x**y produce the same result as Math.pow(x,y)
+
+#####Assignment
+-arithmetic assignment (=, +=, -=, *=, /*, %=, **=)
+-shift assignment (<<=, >>=, >>>=)
+-bitwise assignment (&=, ^=, |=)
+    -~ use to return -1 to 0 and use boolean to verify
+    -& can use to check odd, even, check bit, turn off bit, 
+    -| turn on bit, 
+    -^ toggle bit
+    - A<<=B => A = A << B => A * ( 2 ** B ) => A * Math.pow(2,B)
+        - 170 << 3 => 170 * (2 * 3) => 170 * 8 => 1360
+        - use for rgb to hex
+-logical assignment (&&=, ||=, ??=)
+
+-----###### JS Data Types
+-String
+-Number
+-Bigint
+-Boolean
+-Undefined
+-Null
+-Symbol
+-Object
+
+-----###### Object Data Types
+-An object
+-An Array
+-A date
+
+// Numbers:
+let length = 16;
+let weight = 7.5;
+// Strings:
+let color = "Yellow";
+let lastName = "Johnson";
+// Booleans
+let x = true;
+let y = false;
+// Object:
+const person = {firstName:"John", lastName:"Doe"};
+// Array object:
+const cars = ["Saab", "Volvo", "BMW"];
+// Date object:
+const date = new Date("2022-03-25");
+
+-----###### JS Function
+-----###### JS Object
+-analogy
+    -car is object
+    -weight and color is are property
+    -start and stop is like method
+const car = {type:"Fiat", model:"500", color:"white"};
+
+*access contain , person.lastName; => person["lastName"];
+
+#####Method
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+*In the example above, this refers to the person object.
+*this is not a variable. It is a keyword. You cannot change the value of this
+*When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+
+-----###### JS Events
+Some example of HTML Events
+-web page has finished loading
+-input field was changed
+-button was clicked
+
+common events
+-onchange -> An HTML element has been changed
+-onclick -> The user clicks an HTML element
+-onmouseover -> The user moves the mouse over an HTML element
+-onmouseout -> The user moves the mouse away from an HTML element
+-onkeydown -> The user pushes a keyboard key
+-onload -> The browser has finished loading the page
+more on this -> https://www.w3schools.com/jsref/dom_obj_event.asp
+
+-----###### JS Strings
+- for storing and manipulating text
+
+-----###### JS String Methods
+-length             -slice()                -substring()
+-substr()           -replace()              -replaceAll()
+-toUpperCase()      -toLowerCase()          -concat()
+-trim()             -trimStart()            -trimEnd()
+-padStart()         -padEnd()               -charAt()
+-charCodeAt()       -split()               
+
+#####String length
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+
+#####String slice() 
+- extracts a part of a string and returns the extracted part in a new string
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(7,13); //Banana
+let part = text.slice(7) //Banana, Kiwi
+let part = text.slice(-12); //Banana, Kiwi  *not start 0
+let part = text.slice(-12,-6) //Banana
+*start 0, accept first param, remove from 2nd param
+
+#####String substring()
+-substring() is similar to slice().
+-The difference is that start and end values less than 0 are treated as 0 in substring().
+
+let str = "Apple, Banana, Kiwi";
+let part = str.substring(7, 13); //Banana
+let part = str.substring(7); //Banana, Kiwi
+
+#####String substr()
+-substr() is similar to slice().
+-The difference is that the second parameter specifies the length of the extracted part.
+let str = "Apple, Banana, Kiwi";
+let part = str.substr(7, 6); //Banana
+let part = str.substr(7); //Banana, Kiwi
+let part = str.substr(-4); //Kiwi
+
+#####String repalce()
+let text = "Please visit Microsoft!";
+let newText = text.replace("Microsoft", "W3Schools");
+let newText = text.replace(/MICROSOFT/i, "W3Schools"); //regular expression with an /i flag (insensitive)
+let newText = text.replace(/Microsoft/g, "W3Schools"); //regular expression with a /g flag (global match): / replace all
+*replace() method returns a new string
+*replace() method replaces only the first match
+*case sensitive
+
+#####String ReplaceAll()
+-The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.
+-If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+text = text.replaceAll(/Cats/g,"Dogs");
+text = text.replaceAll(/cats/g,"dogs");
+
+*replaceAll() does not work in Internet Explorer.
+
+#####String concat()
+-concat() joins two or more strings:
+let text1 = "Hello";
+let text2 = "World";
+let text3 = text1.concat(" ", text2);
+
+*The concat() method can be used instead of the plus operator.
+
+#####String trim()
+-The trim() method removes whitespace from both sides of a string:
+let text1 = "      Hello World!      ";
+let text2 = text1.trim(); // 
+
+#####String trimStart()
+-The trimStart() method works like trim(), but removes whitespace only from the start of a string.
+
+#####String trimEnd()
+-The trimEnd() method works like trim(), but removes whitespace only from the end of a string.
+
+#####String Padding
+
+##String padStart()
+-The padStart() method pads a string from the start.
+-It pads a string with another string (multiple times) until it reaches a given length.
+let text = "5";
+let padded = text.padStart(4,"0"); //0005
+let padded = text.padStart(4,"x"); //xxx5
+
+let numb = 5;
+let text = numb.toString();
+let padded = text.padStart(4,"0"); //0005
+
+##String padEnd()
+-The padEnd() method pads a string from the end.
+-It pads a string with another string (multiple times) until it reaches a given length.
+let text = "5";
+let padded = text.padEnd(4,"0"); //4000
+let padded = text.padEnd(4,"x"); //4xxx
+
+#####Extracting String Characters
+
+##String charAt()
+-The charAt() method returns the character at a specified index (position) in a string:
+let text = "HELLO WORLD";
+let char = text.charAt(0); //H
+
+##String charCodeAt()
+-The charCodeAt() method returns the unicode of the character at a specified index in a string:
+-The method returns a UTF-16 code (an integer between 0 and 65535).
+let text = "HELLO WORLD";
+let char = text.charCodeAt(0); //72
+
+##Property Access
+-ECMAScript 5 (2009) allows property access [ ] on strings:
+let text = "HELLO WORLD";
+let char = text[0]; //H
+
+*little unpredictable
+*It makes strings look like arrays (but they are not)
+*If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+*It is read only. str[0] = "A" gives no error (but does not work!)
+
+let text = "HELLO WORLD";
+text[0] = "A";    // Gives no error, but does not work
+
+-----###### Converting a String to an Array
+-If you want to work with a string as an array, you can convert it to an array.
+
+#####String split()
+-A string can be converted to an array with the split() method:
+let text = "a,b,c,d,e,f";
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+myArray[0] ; //a
+
+-if use ""
+let text = "Hello";
+const myArr = text.split("");
+text = "";
+for (let i = 0; i < myArr.length; i++) {
+  text += myArr[i] + "<br>"
+}
+document.getElementById("demo").innerHTML = text;
+/*
+H
+e
+l
+l
+o
+*/
+
+-----###### String Search
+-indexOf()              -lastIndexOf()              -search()
+-match()                -matchAll()                 -includes()
+-startsWith()           -endsWith()
+
+#####String indexOf()
+-indexOf() method returns the index (position) the first occurrence of a string in a string
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate"); //7
+
+*JavaScript counts positions from zero.
+
+#####String lastIndexOf()
+-lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("locate"); //21
+
+*Both indexOf(), and lastIndexOf() return -1 if the text is not found:
+*
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate", 15); //21
+text.lastIndexOf("locate", 15); //7
+
+#####String search()
+-The search() method searches a string for a string (or a regular expression) and returns the position of the match:
+let text = "Please locate where 'locate' occurs!";
+text.search("locate"); //7
+text.search(/locate/); //7
+
+*The search() method cannot take a second start position argument.
+*The indexOf() method cannot take powerful search values (regular expressions).
+
+#####String match()
+-The match() method returns an array containing the results of matching a string against a string (or a regular expression).
+let text = "The rain in SPAIN stays mainly in the plain";
+text.match("ain");
+document.getElementById("demo").innerHTML = myArr.length + " " + myArr; //1 ain
+text.match(/ain/);
+document.getElementById("demo").innerHTML = myArr.length + " " + myArr; //1 ain
+text.match(/ain/g);
+document.getElementById("demo").innerHTML = myArr.length + " " + myArr; //3 ain,ain,ain
+text.match(/ain/gi);
+document.getElementById("demo").innerHTML = myArr.length + " " + myArr; //4 ain,AIN,ain,ain
+
+#####String matchAll()
+-The matchAll() method returns an iterator containing the results of matching a string against a string (or a regular expression).
+const iterator = text.matchAll("Cats");
+document.getElementById("demo").innerHTML = Array.from(iterator); //Cats,Cats
+const iterator = text.matchAll(/Cats/g);
+document.getElementById("demo").innerHTML = Array.from(iterator); //Cats,Cats
+const iterator = text.matchAll(/Cats/gi);
+document.getElementById("demo").innerHTML = Array.from(iterator); //cats,Cats,Cats
+
+#####String includes()
+-The includes() method returns true if a string contains a specified value., Otherwise it returns false.
+let text = "Hello world, welcome to the universe.";
+text.includes("world"); 
+document.getElementById("demo").innerHTML = text.includes("world"); //true
+text.includes("world", 12);
+document.getElementById("demo").innerHTML = text.includes("world", 12); //false
+
+*case sensitive
+
+#####String startsWith()
+-The startsWith() method returns true if a string begins with a specified value., Otherwise it returns false.
+let text = "Hello world, welcome to the universe.";
+text.startsWith("Hello");
+document.getElementById("demo").innerHTML = text.startsWith("Hello"); //true
+text.startsWith("world")
+document.getElementById("demo").innerHTML = text.startsWith("world"); //false
+text.startsWith("world", 5)
+document.getElementById("demo").innerHTML = text.startsWith("world", 5); //false
+text.startsWith("world", 6)
+document.getElementById("demo").innerHTML = text.startsWith("world", 5); //true
+
+*case sensitive
+
+#####String endsWith()
+-The endsWith() method returns true if a string ends with a specified value., Otherwise it returns false:
+let text = "John Doe";
+text.endsWith("Doe");
+document.getElementById("demo").innerHTML = text.endsWith("Doe"); //true
+text.endsWith("world", 11);
+document.getElementById("demo").innerHTML = text.endsWith("world", 11); //true
+
+*case sensitive
+
+-----###### JS String Templates
+- template literals, template strings, string templates, back-tics syntax
+let text = `Hello World!`;
+let text = `He's often called "Johnny"`;
+let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+
+${...} => string interpolation
+
+#####Variable Substitutions
+let firstName = "John";
+let lastName = "Doe";
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+*Automatic replacing of variables with real values is called string interpolation.
+
+#####Expression Substitution
+let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+#####HTML Templates
+let header = "Templates Literals";
+let tags = ["template literals", "javascript", "es6"];
+
+let html = `<h2>${header}</h2><ul>`;
+for (const x of tags) {
+  html += `<li>${x}</li>`;
+}
+
+html += `</ul>`;
+
+-----###### JS Numbers
+-NaN - Not a Number , NaN is a JavaScript reserved word indicating that a number is not a legal number.
+let x = 100 / "Apple";
+isNaN(x); //true
+
+let x = NaN;
+let y = "5";
+let z = x + y; //NaN5
+
+typeof NaN; //number
+
+
+-Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.
+let myNumber = 2; 
+let txt = "";
+while (myNumber != Infinity) {
+   myNumber = myNumber * myNumber;
+   txt = txt + myNumber + "<br>";
+}
+document.getElementById("demo").innerHTML = txt;
+
+let x =  2 / 0; //Infinity
+let y = -2 / 0; //-Infinity
+
+typeof Infinity; //number
+
+
+-Hexadecimal, JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+let x = 0xFF; //255
+
+"Decimal 32 = " + "<br><br>" + 
+
+"Hexatrigesimal (base 36): " + myNumber.toString(36) + "<br>" + //w
+"Duotrigesimal (base 32): " + myNumber.toString(32) + "<br>" +  //10
+"Hexadecimal (base 16): " + myNumber.toString(16) + "<br>" +    //20
+"Duodecimal (base 12): " + myNumber.toString(12) + "<br>" +     //28
+"Decimal (base 10): " + myNumber.toString(10) + "<br>" +        //32
+"Octal (base 8): " + myNumber.toString(8) + "<br>" +            //40
+"Binary (base 2): " + myNumber.toString(2);                     //100000
+
+-----###### JS BigInt
+-store big integer values that are too big to be represented by a normal JavaScript Number
+
+let x = 1234567890123456789012345n;
+let y = BigInt(1234567890123456789012345)
+let type = typeof x; // bigint
+
+*BigInt is the second numeric data type in JavaScript (after Number).
+
+#####Operator
+let x = 9007199254740995n;
+let y = 9007199254740995n;
+let z = x * y;
+
+*Arithmetic between a BigInt and a Number is not allowed (type conversion lose information).
+*Unsigned right shift (>>>) can not be done on a BigInt (it does not have a fixed width).
+*A BigInt can not have decimals.
+
+let x = 5n;
+let y = Number(x) / 2; //2.5
+
+#####New Number Methods
+-Number.isInteger()
+-Number.isSafeInteger()
+
+Number.isInteger(10);   //true
+Number.isInteger(10.5); //false
+
+Number.isSafeInteger(10);                   //true
+Number.isSafeInteger(12345678901234567890); //false
+
+-----###### JS Number Methods
+-toString()             -toExponential()            -toFixed()
+-toPrecision()          -ValueOf()
+
+###toString() Method
+-toString() method returns a number as a string.
+let x = 123;
+document.getElementById("demo").innerHTML =
+x.toString() + "<br>" +             //123
+(123).toString() + "<br>" +         //123
+(100 + 23).toString();              //123
+
+###toExponential() Method
+-toExponential() returns a string, with a number rounded and written using exponential notation.
+let x = 9.656;
+document.getElementById("demo").innerHTML =
+  x.toExponential() + "<br>" +      //9.656e+0
+  x.toExponential(2) + "<br>";      //9.66e+0
+
+###toFixed() Method
+-toFixed() returns a string, with the number written with a specified number of decimals:
+let x = 9.656;
+x.toFixed(0);   //10
+x.toFixed(2);   //9.66
+
+*toFixed(2) is perfect for working with money.
+
+###toPrecision() Method
+-toPrecision() returns a string, with a number written with a specified length:
+let x = 9.656;
+x.toPrecision();    //9.656
+x.toPrecision(2);   //9.7
+x.toPrecision(4);   //9.656
+
+###valueOf() Method
+-valueOf() returns a number as a number.
+let x = 123;
+x.valueOf();            //123
+(123).valueOf();        //123
+(100 + 23).valueOf();   //123
+
+*The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+*There is no reason to use it in your code.
+
+#####Variables to Numbers
+
+###Number() Method
+-The Number() method can be used to convert JavaScript variables to numbers:
+Number(true);       //1
+Number(false);      //0
+Number("10");       //10
+Number("  10");     //10
+Number("10.33");    //10.33
+Number("10,33");    //NaN
+Number("10 33");    //NaN
+Number("John");     //NaN
+
+*Number() can also convert a date to a number.
+Number(new Date("1970-01-01")) //0
+Number(new Date("1970-01-02")) //86400000
+Number(new Date("2017-09-30")) //1506729600000
+
+###parseInt() Method
+-parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+
+parseInt("-10");        //-10
+parseInt("-10.33");     //-10
+parseInt("10");         //10
+parseInt("10 20 30");   //10
+parseInt("10 years");   //10
+parseInt("years 10");   //NaN
+
+###parseFloat() Method
+-parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+
+parseFloat("10");           //10
+parseFloat("10.33");        //10.33
+parseFloat("10 20 30");     //10
+parseFloat("10 years");     //10
+parseFloat("years 10");     //NaN
+
+#####Number Object Methods
+-Number Methods Cannot be Used on Variables
+
+###Number.isInteger() Method
+-The Number.isInteger() method returns true if the argument is an integer.
+
+Number.isInteger(10);       //true
+Number.isInteger(10.5);     //false
+
+###Number.isSafeInteger() Method
+-A safe integer is an integer that can be exactly represented as a double precision number.
+-The Number.isSafeInteger() method returns true if the argument is a safe integer.
+
+Number.isSafeInteger(10);                       //true
+Number.isSafeInteger(12345678901234567890);     //false
+
+*Safe integers are all integers from -(253 - 1) to +(253 - 1).
+*This is safe: 9007199254740991. This is not safe: 9007199254740992.
+
+###Number.parseFloat() Method
+-Number.parseFloat() parses a string and returns a number.
+-Spaces are allowed. Only the first number is returned:
+
+Number.parseFloat("10");            //10
+Number.parseFloat("10.33");         //10.33
+Number.parseFloat("10 20 30");      //10
+Number.parseFloat("10 years");      //10
+Number.parseFloat("years 10");      //NaN
+
+*Number methods Number.parseInt() and Number.parseFloat() => Global methods parseInt() and parseFloat().
+*The purpose is modularization of globals (to make it easier to use the same JavaScript code outside the browser).
+
+###Number.parseInt() Method
+-Number.parseInt() parses a string and returns a whole number.
+
+Number.parseInt("-10");         //-10
+Number.parseInt("-10.33");      //-10
+Number.parseInt("10");          //10
+Number.parseInt("10 20 30");    //10
+Number.parseInt("10 years");    //10
+Number.parseInt("years 10");    //NaN
+
+-----##### JS Number Properties
+
+-EPSILON                -MAX_VALUE              -MIN_VALUE
+-MAX_SAFE_INTEGER       -MIN_SAFE_INTEGER       -POSITIVE_INFINITY
+-NEGATIVE_INFINITY      -NaN
+
+#####JS EPSILON
+-Number.EPSILON is the difference between the smallest floating point number greater than 1 and 1.
+let x = Number.EPSILON;    //2.220446049250313e-16
+
+#####JS MAX_VALUE
+-Number.MAX_VALUE is a constant representing the largest possible number in JavaScript.
+let x = Number.MAX_VALUE;   //1.7976931348623157e+308
+
+#####JS MIN_VALUE
+-Number.MIN_VALUE is a constant representing the lowest possible number in JavaScript.
+let x = Number.MIN_VALUE;   //5e-324
+
+#####JS MAX_SAFE_INTEGER
+-Number.MAX_SAFE_INTEGER represents the maximum safe integer in JavaScript.
+-Number.MAX_SAFE_INTEGER is (2^53(-1)).
+let x = Number.MAX_SAFE_INTEGER;    //9007199254740991
+
+#####JS MIN_SAFE_INTEGER
+-Number.MIN_SAFE_INTEGER represents the minimum safe integer in JavaScript.
+-Number.MIN_SAFE_INTEGER is -(2^53(-1)).
+let x = Number.MIN_SAFE_INTEGER;    //-9007199254740991
+
+#####JS POSITIVE_INFINITY
+let x = Number.POSITIVE_INFINITY;   //infinity
+let x = 1 / 0;                      //infinity
+
+#####JS NEGATIVE_INFINITY
+let x = Number.NEGATIVE_INFINITY;   //infinity
+let x = -1 / 0;                     //infinity
+
+#####JS NaN
+let x = Number.NaN;     //NaN
+let x = 100 / "Apple";  //NaN
+
+-----##### JS Arrays
+-An array is a special variable, which can hold more than one value:
+const cars = ["Saab", "Volvo", "BMW"];
+
+#####Creating an Array
+Using an array literal is the easiest way to create a JavaScript Array.
+
+const array_name = [item1, item2, ...];      
+
+*It is a common practice to declare arrays with the const keyword.
+
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars;   //Saab,Volvo,BMW
+
+#####Using JS Keyword new
+const cars = new Array("Saab", "Volvo", "BMW");
+document.getElementById("demo").innerHTML = cars;   //Saab,Volvo,BMW
+
+*There is no need to use new Array().
+*For simplicity, readability and execution speed, use the array literal method.
+
+#####Accessing Array Elements
+-You access an array element by referring to the index number:
+
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];                      //Saab
+
+#####Changing an Array Element
+-This statement changes the value of the first element in cars:
+
+const cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Opel";
+document.getElementById("demo").innerHTML = cars;   //Opel,Volvo,BMW
+
+#####Converting an Array to a String
+-The JavaScript method toString() converts an array to a string of (comma separated) array values.
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();  //Banana,Orange,Apple,Mango
+
+#####Access the Full Array
+-With JavaScript, the full array can be accessed by referring to the array name:
+
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars;   //Saab,Volvo,BMW
+
+#####Arrays are Objects
+-Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+-But, JavaScript arrays are best described as arrays.
+-Arrays use numbers to access its "elements". In this example, person[0] returns John:
+-Objects use names to access its "members". In this example, person.firstName returns John:
+
+#####Array Elements Can Be Objects
+-JavaScript variables can be objects. Arrays are special kinds of objects.
+-Because of this, you can have variables of different types in the same Array.
+-You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+
+myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars;
+
+#####Array Properties and Methods
+
+###The length Property
+-The length property of an array returns the length of an array (the number of array elements).
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.length;                             //4
+
+###Accessing the First Array Element
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits[0];      //Banana
+
+###Accessing the Last Array Element
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits[fruits.length - 1];      //Mango
+
+###Looping Array Elements
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+Banana
+Orange
+Apple
+Mango
+
+*You can also use the Array.forEach() function:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+
+
+###Adding Array Elements
+-The easiest way to add a new element to an array is using the push() method:
+
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+
+*New element can also be added to an array using the length property:
+const fruits = ["Banana", "Orange", "Apple"];
+fruits[fruits.length] = "Lemon";  // Adds "Lemon" to fruits
+
+**Adding elements with high indexes can create undefined "holes" in an array:
+const fruits = ["Banana", "Orange", "Apple"];
+fruits[6] = "Lemon";  // Creates undefined "holes" in fruits
+
+###Associative Arrays
+-Many programming languages support arrays with named indexes.
+-Arrays with named indexes are called associative arrays (or hashes).
+-JavaScript does not support arrays with named indexes.
+-In JavaScript, arrays always use numbered indexes.  
+
+*In JavaScript, arrays use numbered indexes.  
+*In JavaScript, objects use named indexes.
+
+###When to Use Arrays. When to use Objects.
+-JavaScript does not support associative arrays.
+-You should use objects when you want the element names to be strings (text).
+-You should use arrays when you want the element names to be numbers.
+
+###Recognize an Array
+Array.isArray(fruits); //true
+
+const fruits = ["Banana", "Orange", "Apple"];
+fruits instanceof Array;  //true
+
+
+-----##### JS Array Methods
+
+#####JS Array length
+-The length property returns the length (size) of an array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let size = fruits.length;
+
+#####JS Array toString()
+-The JavaScript method toString() converts an array to a string of (comma separated) array values.
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();  //Banana,Orange,Apple,Mango
+
+*The join() method also joins all array elements into a string.
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * "); //Banana * Orange * Apple * Mango
+
+#####Popping and Pushing
+
+###JS Array pop()
+-The pop() method removes the last element from an array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.pop(); //Mango
+
+###JS Array push()
+-The push() method adds a new element to an array (at the end):
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.push("Kiwi"); //5
+
+#####Shifting Elements
+
+###JS Array shift()
+-The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.shift(); //Banana
+
+###JS Array unshift()
+-The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");  //Lemon,Banana,Orange,Apple,Mango
+
+#####Changing Elements
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";   //Kiwi,Orange,Apple,Mango
+
+###JS Array length
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[fruits.length] = "Kiwi";
+
+###Array delete()
+-Using delete leaves undefined holes in the array.
+-Use pop() or shift() instead.
+
+###Merging (Concatenating) Arrays
+-The concat() method creates a new array by merging (concatenating) existing arrays:
+
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+const myChildren = myGirls.concat(myBoys);  //Cecilie,Lone,Emil,Tobias,Linus
+
+*The concat() method does not change the existing arrays. It always returns a new array.
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin", "Morgan"];
+const myChildren = arr1.concat(arr2, arr3); //Cecilie,Lone,Emil,Tobias,Linus,Robin,Morgan
+
+*The concat() method can also take strings as arguments:
+const arr1 = ["Emil", "Tobias", "Linus"];
+const myChildren = arr1.concat("Peter");  //Emil,Tobias,Linus,Peter
+
+###Flattening an Array
+-Flattening an array is the process of reducing the dimensionality of an array.
+-The flat() method creates a new array with sub-array elements concatenated to a specified depth.
+
+const myArr = [[1,2],[3,4],[5,6]];
+const newArr = myArr.flat();  //  1,2,3,4,5,6
+
+#####Splicing and Slicing Arrays
+
+###JS Array splice()
+-The splice() method can be used to add new items to an array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");   //Banana,Orange,Lemon,Kiwi,Apple,Mango
+*add at 2, remove 0
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let removed = fruits.splice(2, 2, "Lemon", "Kiwi"); 
+document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;       //Banana,Orange,Lemon,Kiwi
+document.getElementById("demo3").innerHTML = "Removed Items:<br> " + removed; //Apple,Mango
+
+#splice() to Remove Elements
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);    //Orange,Apple,Mango
+
+###JS Array slice()
+-The slice() method slices out a piece of an array into a new array.
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1);   //fruits=> Banana,Orange,Lemon,Apple,Mango //citrus=>Orange,Lemon,Apple,Mango
+
+*The slice() method creates a new array.
+*The slice() method does not remove any elements from the source array.
+*The slice() method can take two arguments like slice(1, 3).
+const citrus = fruits.slice(1, 3);    //Orange,Lemon
+
+###Automatic toString()
+-JavaScript automatically converts an array to a comma separated string when a primitive value is expected.
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();    //Banana,Orange,Apple,Mango
+document.getElementById("demo").innerHTML = fruits;   //Banana,Orange,Apple,Mango
+
+*All JavaScript objects have a toString() method.
+
+
+-----##### JS Sorting Arrays
+
+#####Sorting an Array
+-The sort() method sorts an array alphabetically:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();    //Apple,Banana,Mango,Orange
+
+#####Reversing an Array
+-The reverse() method reverses the elements in an array.
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();      //Apple,Banana,Mango,Orange
+fruits.reverse();   //Orange,Mango,Banana,Apple
+
+#####Numeric Sort
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});    //1,5,10,25,40,100
+
+points.sort(function(a, b){return b - a});    //100,40,25,10,5,1
+
+#####Compare Function
+-The purpose of the compare function is to define an alternative sort order.
+-The compare function should return a negative, zero, or positive value, depending on the arguments:
+
+#####Random Order
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(){return 0.5 - Math.random()});
+
+###Fisher Yates Method
+const points = [40, 100, 1, 5, 25, 10];
+
+for (let i = points.length -1; i > 0; i--) {
+  let j = Math.floor(Math.random() * (i+1));
+  let k = points[i];
+  points[i] = points[j];
+  points[j] = k;
+}
+
+#####Lowest (or Highest) Array Value
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+// now points[0] contains the lowest value
+// and points[points.length-1] contains the highest value
+
+###Math.max() on an Array
+const points = [40, 100, 1, 5, 25, 10];
+myArrayMax(points);                     //100
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+
+*Math.max.apply(null, [1, 2, 3]) => Math.max(1, 2, 3).
+
+###Math.min() on an Array
+const points = [40, 100, 1, 5, 25, 10];
+myArrayMin(points);                     //1
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+
+*Math.max.apply(null, [1, 2, 3]) => Math.max(1, 2, 3).
+
+###My Min / Max JavaScript Methods
+function myArrayMax(arr) {
+  let len = arr.length;
+  let max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+
+function myArrayMin(arr) {
+  let len = arr.length;
+  let min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}
+
+
+#####Sorting Object Arrays
+
+JavaScript arrays often contain objects:
+
+const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+cars.sort(function(a, b){return a.year - b.year});    //Saab 2001 BMW 2010 Volvo 2016
+
+cars.sort(function(a, b){
+  let x = a.type.toLowerCase();
+  let y = b.type.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+}); //BMW 2010 Saab 2001 Volvo 2016
+
+
+
+const myArr = [
+  {name:"X00",price:100 },
+  {name:"X01",price:100 },
+  {name:"X02",price:100 },
+  {name:"X03",price:100 },
+  {name:"X04",price:110 },
+  {name:"X05",price:110 },
+  {name:"X06",price:110 },
+  {name:"X07",price:110 },
+  {name:"X08",price:120 },
+  {name:"X09",price:120 },
+  {name:"X10",price:120 },
+  {name:"X11",price:120 },
+  {name:"X12",price:130 },
+  {name:"X13",price:130 },
+  {name:"X14",price:130 },
+  {name:"X15",price:130 },
+  {name:"X16",price:140 },
+  {name:"X17",price:140 },
+  {name:"X18",price:140 },
+  {name:"X19",price:140 }
+];
+myArr.sort( (p1, p2) => {
+  if (p1.price < p2.price) return -1;
+  if (p1.price > p2.price) return 1;
+  return 0;
+});
+let txt = "";
+myArr.forEach(myFunction);
+function myFunction(value) {
+  txt += value.name + " " + value.price + "<br>"; 
+}
+document.getElementById("demo").innerHTML = txt;
+/*
+X00 100
+X01 100
+X02 100
+X03 100
+X04 110
+X05 110
+X06 110
+X07 110
+X08 120
+X09 120
+X10 120
+X11 120
+X12 130
+X13 130
+X14 130
+X15 130
+X16 140
+X17 140
+X18 140
+X19 140 
+*/
+
+-----##### JS Array Iteration
+
+#####JS Array forEach()
+-The forEach() method calls a function (a callback function) once for each array element.
+
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach(myFunction);
+function myFunction(value, index, array) {
+  txt += value + "<br>";
+}
+
+###to Arrow Function Representation
+numbers.forEach(function(number) {
+    console.log(number);
+});
+
+numbers.forEach(number => console.log(number));
+
+#####JS Array map()
+-The map() method creates a new array by performing a function on each array element.
+-The map() method does not execute the function for array elements without values.
+-The map() method does not change the original array.
+
+This example multiplies each array value by 2:
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+
+#####JS Array flatMap()
+-The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+
+const myArr = [1, 2, 3, 4, 5, 6];
+const newArr = myArr.flatMap((x) => x * 2); //2,4,6,8,10,12
+
+#####JS Array filter()
+-The filter() method creates a new array with array elements that pass a test.
+-This example creates a new array from elements with a value larger than 18:
+
+const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+} //45,25
+
+#####Array reduce()
+-The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+-The reduce() method works from left-to-right in the array. See also reduceRight().
+-The reduce() method does not reduce the original array.
+
+This example finds the sum of all numbers in an array:
+
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce(myFunction);
+function myFunction(total, value, index, array) {
+  return total + value;
+} //99
+
+*The reduce() method can accept an initial value:
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce(myFunction, 100);
+function myFunction(total, value) {
+  return total + value;
+} //199
+
+*The reduceRight() works from right-to-left in the array. See also reduce().
+
+#####Array every()
+-The every() method checks if all array values pass a test.
+
+This example checks if all array values are larger than 18:
+
+const numbers = [45, 4, 9, 16, 25];
+let allOver18 = numbers.every(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+}  // false
+
+#####Array some()
+-The some() method checks if some array values pass a test.
+
+This example checks if some array values are larger than 18:
+
+const numbers = [45, 4, 9, 16, 25];
+let someOver18 = numbers.some(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+} //true
+
+#####Array indexOf()
+-The indexOf() method searches an array for an element value and returns its position.
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.indexOf("Apple") + 1; //1
+
+*Array.indexOf() returns -1 if the item is not found.
+
+#####Array lastIndexOf()
+-Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.lastIndexOf("Apple") + 1; //3
+
+#####Array find()
+-The find() method returns the value of the first array element that passes a test function.
+
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+} //25
+
+#####Array findIndex()
+-The findIndex() method returns the index of the first array element that passes a test function.
+
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.findIndex(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+} //3
+
+#####Array.from()
+-The Array.from() method returns an Array object from any object with a length property or any iterable object.
+
+const myArr = Array.from("ABCDEFG");    //A,B,C,D,E,F,G
+
+#####Array Keys()
+-The Array.keys() method returns an Array Iterator object with the keys of an array.
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+let text = "";
+for (let x of keys) {
+  text += x + "<br>";
+}   // 0 1 2 3
+
+
+#####Array entries()
+-Create an Array Iterator, and then iterate over the key/value pairs:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+
+for (let x of f) {
+  document.getElementById("demo").innerHTML += x + "<br>";
+} // 0,Banana 1,Orange 2,Apple 3,Mango
+
+#####Array includes()
+-This allows us to check if an element is present in an array (including NaN, unlike indexOf).
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.includes("Mango"); // is true
+
+
+#####Array Spread (...)
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "May"];
+const year = [...q1, ...q2, ...q3, ...q4];
+document.getElementById("demo").innerHTML = year; //Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,May
+
+-----##### JS Array Const
+
+-An array declared with const cannot be reassigned:
+-It does NOT define a constant array. It defines a constant reference to an array.
+-Because of this, we can still change the elements of a constant array.
+-JavaScript const variables must be assigned a value when they are declared:
+-An array declared with const has Block Scope.
+-An array declared with var does not have block scope:
+
+-----##### JS Date Objects
+-JavaScript Date Objects let us work with dates:
+
+const d = new Date();                             //Wed Oct 04 2023 19:56:18 GMT+0800 (Malaysia Time)
+const d = new Date("2022-03-25");                 //Fri Mar 25 2022 08:00:00 GMT+0800 (Malaysia Time)
+const d = new Date("October 13, 2014 11:13:00");  //Mon Oct 13 2014 11:13:00 GMT+0800 (Malaysia Time)
+
+*JavaScript counts months from 0 to 11:
+const d = new Date(2018, 11, 24, 10, 33, 30, 0);  //Mon Dec 24 2018 10:33:30 GMT+0800 (Malaysia Time)
+
+*Specifying a day higher than max, will not result in an error but add the overflow to the next month:
+const d = new Date(2018, 5, 35, 10, 33, 30);      //Thu Jul 05 2018 10:33:30 GMT+0800 (Malaysia Time)
+const d = new Date(2018, 11, 24, 10, 33, 30);     //Mon Dec 24 2018 10:33:30 GMT+0800 (Malaysia Time)
+const d = new Date(2018, 11, 24, 10, 33);         //Mon Dec 24 2018 10:33:00 GMT+0800 (Malaysia Time)
+const d = new Date(2018, 11, 24, 10);             //Mon Dec 24 2018 10:00:00 GMT+0800 (Malaysia Time)
+const d = new Date(2018, 11, 24);                 //Mon Dec 24 2018 00:00:00 GMT+0800 (Malaysia Time)
+const d = new Date(2018, 11);                     //Sat Dec 01 2018 00:00:00 GMT+0800 (Malaysia Time)
+const d = new Date(2018);                         //Thu Jan 01 1970 07:30:02 GMT+0730 (Malaysia Time)
+
+*One and two digit years will be interpreted as 19xx:
+const d = new Date(99, 11, 24);                   //Fri Dec 24 1999 00:00:00 GMT+0800 (Malaysia Time)
+const d = new Date(9, 11, 24);                    //Fri Dec 24 1909 00:00:00 GMT+0700 (Malaysia Time)
+
+##JavaScript Stores Dates as Milliseconds
+-JavaScript stores dates as number of milliseconds since January 01, 1970.
+-Zero time is January 01, 1970 00:00:00 UTC.
+-One day (24 hours) is 86 400 000 milliseconds.
+const d = new Date(100000000000);                 //Sat Mar 03 1973 17:16:40 GMT+0730 (Malaysia Time)
+
+#####Date Methods
+
+###Displaying Dates
+-JavaScript will (by default) output dates using the toString() method. This is a string representation of the date, including the time zone. The format is specified in the ECMAScript specification:
+
+const d = new Date();
+d.toString();                                     //Wed Oct 04 2023 20:10:23 GMT+0800 (Malaysia Time)
+
+const d = new Date();
+d.toDateString();                                 //Wed Oct 04 2023
+
+const d = new Date();
+d.toUTCString();                                  //Wed, 04 Oct 2023 12:11:05 GMT
+
+const d = new Date();
+d.toISOString();                                  //2023-10-04T12:11:19.569Z
+
+-----##### JS Date Formats
+
+#####JS Date Input
+ISO Date	      "2015-03-25" (The International Standard)
+Short Date	    "03/25/2015"
+Long Date	      "Mar 25 2015" or "25 Mar 2015"
+
